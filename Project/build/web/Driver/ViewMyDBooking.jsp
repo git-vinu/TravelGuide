@@ -18,19 +18,19 @@
         <table border="1">
             <tr>
                 <th>Sl.No</th>
-                <th>Hotel Name</th>
+                <th>User Name</th>
                 <th>Booking Date</th>
                 <th>Booking Time</th>
                 <th>Booked Date</th>
                 <th>Hotel Details</th>
-                <th>Hotel Contact</th>
-                <th>Hotel Address</th>
+                <th>User Contact</th>
+                <th>User Address</th>
                 <th>Status</th>
             </tr>
             <%
 
                 int i = 0;
-                String selQry = "select * from tbl_driverbooking s inner join tbl_user c on s.user_id=c.user_id where driver_id='" + session.getAttribute("uid") + "'";
+                String selQry = "select * from tbl_driverbooking s inner join tbl_user c on s.user_id=c.user_id where driver_id='" + session.getAttribute("did") + "'";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     i++;
@@ -39,13 +39,13 @@
 
             <tr>
                 <td><%=i%></td>
-                <td><%= rs.getString("driver_name")%></td>
+                <td><%= rs.getString("user_name")%></td>
                 <td><%= rs.getString("driverbooking_date")%></td>
                 <td><%= rs.getString("driverbooking_time")%></td>
                 <td><%= rs.getString("drivebooking_curent_date")%></td>
                 <td><%= rs.getString("drivebooking_content")%></td>
-                <td><%= rs.getString("driver_contact")%></td>
-                <td><%= rs.getString("driver_address")%></td>
+                <td><%= rs.getString("user_contact")%></td>
+                <td><%= rs.getString("user_address")%></td>
                 <td><%= rs.getString("driverbooking_status")%></td>
 
             </tr>

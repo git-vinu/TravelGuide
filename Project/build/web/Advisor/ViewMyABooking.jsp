@@ -18,13 +18,13 @@
         <table border="1">
             <tr>
                 <th>Sl.No</th>
-                <th>Hotel Name</th>
+                <th>User Name</th>
                 <th>Booking Date</th>
                 <th>Booking Time</th>
                 <th>Booked Date</th>
-                <th>Hotel Details</th>
-                <th>Hotel Contact</th>
-                <th>Hotel Address</th>
+                <th>Advicor Details</th>
+                <th>User Contact</th>
+                <th>User Address</th>
                 <th>Status</th>
             </tr>
             <%
@@ -39,13 +39,13 @@
 
             <tr>
                 <td><%=i%></td>
-                <td><%= rs.getString("advicor_name")%></td>
+                <td><%= rs.getString("user_name")%></td>
                 <td><%= rs.getString("advicorbooking_date")%></td>
                 <td><%= rs.getString("advicorbooking_time")%></td>
                 <td><%= rs.getString("advicorbooking_curent_date")%></td>
                 <td><%= rs.getString("advicorbooking_content")%></td>
-                <td><%= rs.getString("advicor_contact")%></td>
-                <td><%= rs.getString("advicor__address")%></td>
+                <td><%= rs.getString("user_contact")%></td>
+                <td><%= rs.getString("user_address")%></td>
                 <td><%= rs.getString("advicorbooking_status")%></td>
 
             </tr>
