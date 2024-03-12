@@ -60,53 +60,56 @@ public final class AdvisorBooking_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title>Advicor Booking</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <form>\n");
+      out.write("        <form method=\"POST\">\n");
+      out.write("\n");
+      out.write("            ");
+
+
+                if (request.getParameter("btnsubmit") != null) {
+                    String AdvicorbookingContent = request.getParameter("txt_content");
+                    String AdvicorbookingDate = request.getParameter("txt_date");
+                    String AdvicorbookingTime = request.getParameter("txt_time");
+
+                    String insQry = "insert into tbl_advicorbooking(advicorbooking_content,advicorbooking_date,advicorbooking_time,advicorbooking_curent_date,advicor_id,user_id)values('" + AdvicorbookingContent + "','" + AdvicorbookingDate + "','" + AdvicorbookingTime + "',curdate(),'" + request.getParameter("id") + "','" + session.getAttribute("uid") + "') ";
+
+                    out.print(insQry);
+                    if (con.executeCommand(insQry)) {
+            
+      out.write("\n");
+      out.write("            <script>\n");
+      out.write("                alert(\"inserted\");\n");
+      out.write("            </script>\n");
+      out.write("            ");
+
+                    }
+                }
+            
+      out.write("\n");
+      out.write("\n");
       out.write("            <table border=\"1\">\n");
-      out.write("                <tr>\n");
+      out.write("                <tr>        \n");
       out.write("                    <td>Content</td>\n");
-      out.write("                    <td><input type=\"text\" name=\"text\" required></td>\n");
+      out.write("                    <td><textarea name=\"txt_content\" required></textarea></td>\n");
+      out.write("                </tr>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td>Date</td>\n");
+      out.write("                    <td><input type=\"date\" name=\"txt_date\" required></td>\n");
+      out.write("                </tr>\n");
+      out.write("                <tr>\n");
+      out.write("                    <td>Time</td>\n");
+      out.write("                    <td><input type=\"time\" name=\"txt_time\" required></td>\n");
       out.write("                </tr>\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("                ");
-
-                    String placeName = request.getParameter("sel_place");
-                    String sel = "select * from tbl_advicor where place_id='" + placeName + "'";
-                    ResultSet rs = con.selectCommand(sel);
-                    while (rs.next()) {
-                
       out.write("\n");
-      out.write("                }\n");
-      out.write("\n");
-      out.write("                <ul>\n");
-      out.write("                    <li><strong>Name:</strong> ");
-      out.print(rs.getString("advicor_name"));
-      out.write("</li>\n");
-      out.write("                    <li><strong>Email:</strong> ");
-      out.print(rs.getString("advicor_email"));
-      out.write("</li>\n");
-      out.write("                    <li><strong>Date:</strong> ");
-      out.print(rs.getString("date"));
-      out.write("</li>\n");
-      out.write("                    <li><strong>Time:</strong> ");
-      out.print(rs.getString("time"));
-      out.write("</li>\n");
-      out.write("                    <li><strong>Comments:</strong> ");
-      out.print(rs.getString("comments"));
-      out.write("</li>\n");
-      out.write("                </ul>\n");
-      out.write("                ");
-
-                    }
-                
       out.write("\n");
       out.write("                <tr>\n");
       out.write("                    <td colspan=\"2\" align=\"center\">\n");
-      out.write("                        <button type=\"submit\">Send</button>\n");
+      out.write("                        <input type=\"submit\" name=\"btnsubmit\" value=\"Save\">\n");
       out.write("\n");
       out.write("                    </td>\n");
       out.write("                </tr>\n");

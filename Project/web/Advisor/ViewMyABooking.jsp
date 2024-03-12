@@ -13,6 +13,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Advicor Booking</title>
     </head>
+    
+    <%
+        if (request.getParameter("acid") != null) {
+            String upQry = "update tbl_advicorbooking set advicorbooking_status='1' where advicorbooking_id ='" + request.getParameter("acid") + "'";
+         
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Accepted)</script>");
+            }
+        }
+
+        if (request.getParameter("eid") != null) {
+            String upQry = "update tbl_advicorbooking set advicorbooking_status='2' where advicorbooking_id ='" + request.getParameter("eid") + "'";
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Rejected)</script>");
+            }
+        }
+    %>
+    
     <body>
         <h1>My Advicor Bookings</h1>
         <table border="1">
@@ -46,8 +64,30 @@
                 <td><%= rs.getString("advicorbooking_content")%></td>
                 <td><%= rs.getString("user_contact")%></td>
                 <td><%= rs.getString("user_address")%></td>
-                <td><%= rs.getString("advicorbooking_status")%></td>
+                
+                
+                <td>
+                
+                <%
+                        if (rs.getInt("advicorbooking_status") == 0) {
+                    %>
+                    <a href="ViewMyABooking.jsp?acid=<%=rs.getString("advicorbooking_id")%>">Accept</a>
+                    <a href="ViewMyABooking.jsp?eid=<%=rs.getString("advicorbooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("advicorbooking_status") == 1) {
+                    %>
+                    <a href="ViewMyABooking.jsp?eid=<%=rs.getString("advicorbooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("advicorbooking_status") == 2) {
+                    %>
+                    <a href="ViewMyABooking.jsp?acid=<%=rs.getString("advicorbooking_id")%>">Accept</a>
+                    <%
+                        }
 
+                    %>
+                    </td>
+
+                    
             </tr>
             <%
                 }

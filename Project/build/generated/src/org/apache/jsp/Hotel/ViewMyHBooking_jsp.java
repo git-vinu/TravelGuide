@@ -1,11 +1,11 @@
-package org.apache.jsp.User;
+package org.apache.jsp.Hotel;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.ResultSet;
 
-public final class ViewMyHotelBooking_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class ViewMyHBooking_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -61,7 +61,27 @@ public final class ViewMyHotelBooking_jsp extends org.apache.jasper.runtime.Http
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Hotel Booking</title>\n");
       out.write("    </head>\n");
+      out.write("    \n");
+      out.write("    ");
+
+    if(request.getParameter("did") != null){
+            String upQry = "update tbl_hotel set hotel_status='1' where hotel_id='" + request.getParameter("hid") + "'";
+            if (con.executeCommand(upQry)){
+                out.println("<script>alert(Accepted)</script>");
+                }
+    }
+    
+    if(request.getParameter("eid") != null){
+            String upQry = "update tbl_hotel set hotel_status='1' where hotel_id='" + request.getParameter("hid") + "'";
+            if (con.executeCommand(upQry)){
+                out.println("<script>alert(Rejected)</script>");
+                }
+    }
+    
+      out.write("\n");
+      out.write("    \n");
       out.write("    <body>\n");
+      out.write("        \n");
       out.write("        <h1>My Hotel Bookings</h1>\n");
       out.write("        <table border=\"1\">\n");
       out.write("            <tr>\n");
@@ -75,11 +95,12 @@ public final class ViewMyHotelBooking_jsp extends org.apache.jasper.runtime.Http
       out.write("                <th>Hotel Address</th>\n");
       out.write("                <th>Status</th>\n");
       out.write("            </tr>\n");
+      out.write("            \n");
       out.write("            ");
 
 
                 int i = 0;
-                String selQry = "select * from tbl_hotelbooking s inner join tbl_hotel c on s.hotel_id=c.hotel_id where user_id='" + session.getAttribute("uid") + "'";
+                String selQry = "select * from tbl_hotelbooking s inner join tbl_user c on s.user_id=c.user_id where hotel_id='" + session.getAttribute("hid") + "'";
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     i++;
@@ -92,7 +113,7 @@ public final class ViewMyHotelBooking_jsp extends org.apache.jasper.runtime.Http
       out.print(i);
       out.write("</td>\n");
       out.write("                <td>");
-      out.print( rs.getString("hotel_name"));
+      out.print( rs.getString("user_name"));
       out.write("</td>\n");
       out.write("                <td>");
       out.print( rs.getString("hotelbooking_date"));
@@ -107,14 +128,19 @@ public final class ViewMyHotelBooking_jsp extends org.apache.jasper.runtime.Http
       out.print( rs.getString("hotelbooking_content"));
       out.write("</td>\n");
       out.write("                <td>");
-      out.print( rs.getString("hotel_contact"));
+      out.print( rs.getString("user_contact"));
       out.write("</td>\n");
       out.write("                <td>");
-      out.print( rs.getString("hotel_address"));
+      out.print( rs.getString("user_address"));
       out.write("</td>\n");
-      out.write("                <td>");
-      out.print( rs.getString("hotelbooking_status"));
-      out.write("</td>\n");
+      out.write("                <td>\n");
+      out.write("                    <a href=\"ViewMyHBooking.jsp?did=");
+      out.print(rs.getString("hotel_id"));
+      out.write("\">Accept</a>\n");
+      out.write("                    <a href=\"ViewMyHBooking.jsp?eid=");
+      out.print(rs.getString("hotel_id"));
+      out.write("\">Reject</a>\n");
+      out.write("                </td>\n");
       out.write("\n");
       out.write("            </tr>\n");
       out.write("            ");

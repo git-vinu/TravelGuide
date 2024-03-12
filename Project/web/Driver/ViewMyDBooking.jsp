@@ -13,6 +13,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Drive Booking</title>
     </head>
+    
+    <%
+        if (request.getParameter("acid") != null) {
+            String upQry = "update tbl_driverbooking set driverbooking_status='1' where driverbooking_id ='" + request.getParameter("acid") + "'";
+         
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Accepted)</script>");
+            }
+        }
+
+        if (request.getParameter("eid") != null) {
+            String upQry = "update tbl_driverbooking set driverbooking_status='2' where driverbooking_id ='" + request.getParameter("eid") + "'";
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Rejected)</script>");
+            }
+        }
+    %>
+    
     <body>
         <h1>My Drive Bookings</h1>
         <table border="1">
@@ -46,8 +64,30 @@
                 <td><%= rs.getString("drivebooking_content")%></td>
                 <td><%= rs.getString("user_contact")%></td>
                 <td><%= rs.getString("user_address")%></td>
-                <td><%= rs.getString("driverbooking_status")%></td>
+                
+                
+                <td>
+                
+                <%
+                        if (rs.getInt("driverbooking_status") == 0) {
+                    %>
+                    <a href="ViewMyDBooking.jsp?acid=<%=rs.getString("driverbooking_id")%>">Accept</a>
+                    <a href="ViewMyDBooking.jsp?eid=<%=rs.getString("driverbooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("driverbooking_status") == 1) {
+                    %>
+                    <a href="ViewMyDBooking.jsp?eid=<%=rs.getString("driverbooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("driverbooking_status") == 2) {
+                    %>
+                    <a href="ViewMyDBooking.jsp?acid=<%=rs.getString("driverbooking_id")%>">Accept</a>
+                    <%
+                        }
 
+                    %>
+                    </td>
+
+                    
             </tr>
             <%
                 }

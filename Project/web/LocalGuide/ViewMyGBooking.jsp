@@ -13,6 +13,24 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Guide Booking</title>
     </head>
+    
+    <%
+        if (request.getParameter("acid") != null) {
+            String upQry = "update tbl_guidebooking set guidebooking_status='1' where guidebooking_id ='" + request.getParameter("acid") + "'";
+         
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Accepted)</script>");
+            }
+        }
+
+        if (request.getParameter("eid") != null) {
+            String upQry = "update tbl_guidebooking set guidebooking_status='2' where guidebooking_id ='" + request.getParameter("eid") + "'";
+            if (con.executeCommand(upQry)) {
+                out.println("<script>alert(Rejected)</script>");
+            }
+        }
+    %>
+    
     <body>
         <h1>My Bookings</h1>
         <table border="1">
@@ -31,7 +49,7 @@
 
                 int i = 0;
                 String selQry = "select * from tbl_guidebooking s inner join tbl_user c on s.user_id=c.user_id where guide_id='" + session.getAttribute("lid") + "'";
-                out.print(selQry);
+//                out.print(selQry);
                 ResultSet rs = con.selectCommand(selQry);
                 while (rs.next()) {
                     i++;
@@ -47,8 +65,26 @@
                 <td><%= rs.getString("guidebooking_content")%></td>
                 <td><%= rs.getString("user_contact")%></td>
                 <td><%= rs.getString("user_address")%></td>
-                <td><%= rs.getString("guidebooking_status")%></td>
+                <td>
+                
+                <%
+                        if (rs.getInt("guidebooking_status") == 0) {
+                    %>
+                    <a href="ViewMyGBooking.jsp?acid=<%=rs.getString("guidebooking_id")%>">Accept</a>
+                    <a href="ViewMyGBooking.jsp?eid=<%=rs.getString("guidebooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("guidebooking_status") == 1) {
+                    %>
+                    <a href="ViewMyGBooking.jsp?eid=<%=rs.getString("guidebooking_id")%>">Reject</a>
+                    <%
+                    } else if (rs.getInt("guidebooking_status") == 2) {
+                    %>
+                    <a href="ViewMyGBooking.jsp?acid=<%=rs.getString("guidebooking_id")%>">Accept</a>
+                    <%
+                        }
 
+                    %>
+                    </td>
             </tr>
             <%
                 }
