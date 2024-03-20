@@ -1,8 +1,4 @@
-<%-- 
-    Document   : NewUser
-    Created on : 6 Feb, 2024, 5:44:24 PM
-    Author     : vinum
---%>
+<%@include file="head.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 
@@ -79,7 +75,7 @@
         </form>
 
     </body>
-
+    <%@include file="foot.jsp" %>
     <script src="../Assets/jQuery/jQuery.js"></script>
     <script>
         function getPlace(did)

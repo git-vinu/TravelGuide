@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : ExaplePage
     Created on : 3 Mar, 2024, 3:05:26 PM
@@ -96,5 +97,6 @@
             %>
         </table>
     </body>
+    <%@include file="foot.jsp" %>
 </html>
 

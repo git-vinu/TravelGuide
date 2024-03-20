@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : SearchHotel
     Created on : 23 Feb, 2024, 11:42:12 AM
@@ -85,6 +86,9 @@
 
 
                     </body>
+                    
+                        <%@include file="foot.jsp" %>
+
 
                     <script src="../Assets/jQuery/jQuery.js"></script>
                     <script>

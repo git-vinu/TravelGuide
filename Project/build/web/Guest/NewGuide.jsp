@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : NewUser
     Created on : 6 Feb, 2024, 5:44:24 PM
@@ -78,10 +79,11 @@
                 </tr>
             </table>
         </form>
-    </table>
-</form>
+    
 
 </body>
+
+<%@include file="foot.jsp" %>
 
 <script src="../Assets/jQuery/jQuery.js"></script>
 <script>

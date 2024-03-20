@@ -1,3 +1,9 @@
+<%@include file="head.jsp" %>
+<%-- 
+    Document   : myprofile
+    Created on : 9 Feb, 2022, 2:38:06 PM
+    Author     : rinus
+--%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%@page import="java.sql.ResultSet" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,5 +41,6 @@
             </form>
         </div>
     </body>
+    <%@include file="foot.jsp" %>
     <br><br>
 </html>

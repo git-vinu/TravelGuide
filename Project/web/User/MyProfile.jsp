@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : myprofile
     Created on : 9 Feb, 2022, 2:38:06 PM
@@ -32,6 +33,7 @@
                     <tr><th>Contact</th> <td><%=rs.getString("user_contact")%></td></tr>
                     <tr><th>Email</th> <td><%=rs.getString("user_email")%></td></tr>
                     <tr><th>Address</th> <td><%=rs.getString("user_address")%></td></tr>
+                    <tr><td><a href="EditProfile.jsp">Edit Profile</a></td><td><a href="ChangePassword.jsp">Change Password</a></td></tr>
 
                     <%
                         }
@@ -40,5 +42,6 @@
             </form>
         </div>
     </body>
+    <%@include file="foot.jsp" %>
     <br><br>
 </html>

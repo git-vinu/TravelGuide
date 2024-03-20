@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : ChangePassword
     Created on : 21 Feb, 2024, 5:00:58 PM
@@ -51,5 +52,6 @@
             </form>
         </div>
     </body>
+    <%@include file="foot.jsp" %>
     <br><br>
 </html>

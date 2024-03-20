@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : editprofile
     Created on : 9 Feb, 2022, 3:33:16 PM
@@ -48,5 +49,6 @@
         </form>
     </div>
    </body>
+    <%@include file="foot.jsp" %>
     <br><br>
 </html>

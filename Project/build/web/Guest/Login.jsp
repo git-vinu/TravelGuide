@@ -16,7 +16,7 @@
     </head>
     <body>
         <div class="login">
-            <h2 align="center">Login </h2>
+            <h2 align="center">Login </h2> 
 
             <%
 

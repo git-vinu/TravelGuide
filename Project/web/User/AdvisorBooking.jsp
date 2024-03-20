@@ -1,3 +1,4 @@
+<%@include file="head.jsp" %>
 <%-- 
     Document   : AdvisorBooking
     Created on : 24 Feb, 2024, 12:38:31 PM
@@ -64,4 +65,5 @@
             </table>
         </form>
     </body>
+    <%@include file="foot.jsp" %>
 </html>
