@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2024 at 01:11 PM
+-- Generation Time: Mar 20, 2024 at 08:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -90,7 +90,7 @@ CREATE TABLE `tbl_advicorbooking` (
 --
 
 INSERT INTO `tbl_advicorbooking` (`advicorbooking_id`, `advicor_id`, `user_id`, `advicorbooking_time`, `advicorbooking_date`, `advicorbooking_status`, `advicorbooking_content`, `advicorbooking_curent_date`) VALUES
-(1, 2, 8, '11:55', '2024-03-05', '0', 'Haii I Am Anna', '2024-03-04');
+(1, 2, 8, '11:55', '2024-03-05', '1', 'Haii I Am Anna', '2024-03-04');
 
 -- --------------------------------------------------------
 
@@ -197,9 +197,9 @@ CREATE TABLE `tbl_driverbooking` (
 --
 
 INSERT INTO `tbl_driverbooking` (`driverbooking_id`, `driverbooking_time`, `driverbooking_date`, `driverbooking_status`, `drivebooking_content`, `drivebooking_curent_date`, `driver_id`, `user_id`) VALUES
-(3, '12:07', '2024-02-29', '0', 'hello', '2024-02-28', 7, 8),
-(6, '16:39', '2024-03-02', '0', 'haii', '2024-03-01', 7, 8),
-(7, '10:07', '2024-03-07', '0', 'haii iam vinu', '2024-03-06', 7, 9);
+(3, '12:07', '2024-02-29', '1', 'hello', '2024-02-28', 7, 8),
+(6, '16:39', '2024-03-02', '2', 'haii', '2024-03-01', 7, 8),
+(7, '10:07', '2024-03-07', '1', 'haii iam vinu', '2024-03-06', 7, 9);
 
 -- --------------------------------------------------------
 
@@ -260,7 +260,7 @@ INSERT INTO `tbl_guide` (`guide_id`, `guide_name`, `guide_email`, `guide_passwor
 --
 
 CREATE TABLE `tbl_guidebooking` (
-  `guidebooking` int(11) NOT NULL,
+  `guidebooking_id` int(11) NOT NULL,
   `guide_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `guidebooking_time` varchar(100) NOT NULL,
@@ -274,8 +274,11 @@ CREATE TABLE `tbl_guidebooking` (
 -- Dumping data for table `tbl_guidebooking`
 --
 
-INSERT INTO `tbl_guidebooking` (`guidebooking`, `guide_id`, `user_id`, `guidebooking_time`, `guidebooking_date`, `guidebooking_status`, `guidebooking_content`, `guidebooking_curent_date`) VALUES
-(2, 15, 8, '22:18', '2024-03-03', '0', 'Haii I Am Naruto', '2024-03-01');
+INSERT INTO `tbl_guidebooking` (`guidebooking_id`, `guide_id`, `user_id`, `guidebooking_time`, `guidebooking_date`, `guidebooking_status`, `guidebooking_content`, `guidebooking_curent_date`) VALUES
+(2, 15, 8, '22:18', '2024-03-03', '1', 'Haii I Am Naruto', '2024-03-01'),
+(3, 16, 8, '11:51', '2024-03-10', '0', 'Hai I Am Vinu', '2024-03-09'),
+(4, 15, 8, '11:56', '2024-03-14', '1', 'hee i am vinu m varughese', '2024-03-09'),
+(5, 15, 8, '11:58', '2024-03-14', '2', 'haiiii', '2024-03-09');
 
 -- --------------------------------------------------------
 
@@ -303,7 +306,7 @@ INSERT INTO `tbl_hotel` (`hotel_id`, `hotel_name`, `hotel_email`, `hotel_passwor
 (7, 'Hotel Paris', 'hotelparis@gmail.com', 'Paris@223', '5424947895', 'Hotel Paris munnar', 'UserPhoto_1535.jpeg', '0', 8),
 (8, 'Skyland ', 'skyland33@gmail.com', 'Skyland 33', '86755469181', 'Hotel Skyland Wayanad', 'UserPhoto_1960.jpeg', '0', 11),
 (9, 'Hiliya ', 'hiliya212@gmail.com', 'Hiliya', '9268486243', 'Hotel Hiliya Wayanad', 'UserPhoto_1840.jpeg', '0', 12),
-(10, 'Misty', 'hotelmisty113@gmail.com', 'Misty#5521#', '9465721684', 'Hotel Misty Idukki', 'UserPhoto_1211.jpeg', '0', 10),
+(10, 'Misty', 'hotelmisty113@gmail.com', 'Misty#5521#', '9465721684', 'Hotel Misty Idukki', 'UserPhoto_1211.jpeg', '1', 10),
 (11, 'Hotel Plasma', 'hotelplasma@gmail.com', 'v@123', '8965491528', 'Hotel Plasma Vagamon', 'UserPhoto_2030.jpeg', '0', 10);
 
 -- --------------------------------------------------------
@@ -329,8 +332,9 @@ CREATE TABLE `tbl_hotelbooking` (
 --
 
 INSERT INTO `tbl_hotelbooking` (`hotelbooking_id`, `hotel_id`, `user_id`, `hotelbooking_date`, `hotelbooking_time`, `hotelbooking_curent_date`, `hotelbooking_payment`, `hotelbooking_status`, `hotelbooking_content`) VALUES
-(2, 10, 8, '2024-02-29', '11:30', '2024-02-28', '0', '0', 'hello'),
-(3, 10, 9, '2024-03-07', '10:04', '2024-03-06', '0', '0', 'haiii iam');
+(2, 10, 8, '2024-02-29', '11:30', '2024-02-28', '0', '1', 'hello'),
+(3, 10, 9, '2024-03-07', '10:04', '2024-03-06', '0', '2', 'haiii iam'),
+(4, 10, 8, '2024-03-13', '16:10', '2024-03-12', '0', '1', 'haii i am shinoy shaji');
 
 -- --------------------------------------------------------
 
@@ -473,7 +477,7 @@ ALTER TABLE `tbl_guide`
 -- Indexes for table `tbl_guidebooking`
 --
 ALTER TABLE `tbl_guidebooking`
-  ADD PRIMARY KEY (`guidebooking`);
+  ADD PRIMARY KEY (`guidebooking_id`);
 
 --
 -- Indexes for table `tbl_hotel`
@@ -573,7 +577,7 @@ ALTER TABLE `tbl_guide`
 -- AUTO_INCREMENT for table `tbl_guidebooking`
 --
 ALTER TABLE `tbl_guidebooking`
-  MODIFY `guidebooking` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `guidebooking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_hotel`
@@ -585,7 +589,7 @@ ALTER TABLE `tbl_hotel`
 -- AUTO_INCREMENT for table `tbl_hotelbooking`
 --
 ALTER TABLE `tbl_hotelbooking`
-  MODIFY `hotelbooking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `hotelbooking_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_place`
