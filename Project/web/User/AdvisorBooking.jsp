@@ -29,11 +29,17 @@
 
                     out.print(insQry);
                     if (con.executeCommand(insQry)) {
-            %>
+                        String SelQry = "Select max(advicorbooking_id ) as id from tbl_advicorbooking";
+                        ResultSet rs = con.selectCommand(SelQry);
+                        rs.next();
+                        String id = rs.getString("id");
+            %> 
             <script>
                 alert("inserted");
+                window.location = "PaymentAdvisor.jsp?id=<%=id%>";
             </script>
             <%
+
                     }
                 }
             %>

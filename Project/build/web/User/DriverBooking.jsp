@@ -32,9 +32,14 @@
                     
 //                  out.print(insQry);
                     if(con.executeCommand(insQry)) {
-                        %>
+                        String SelQry= "Select max(driverbooking_id) as id from tbl_driverbooking";
+                        ResultSet rs = con.selectCommand(SelQry);
+                        rs.next();
+                        String id= rs.getString("id");
+                        %> 
                         <script>
-                         alert("inserted");   
+                         alert("inserted"); 
+                         window.location="PaymentDriver.jsp?id=<%=id%>";
                             </script>
                         <%
                     

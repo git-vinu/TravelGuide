@@ -17,32 +17,34 @@
     </head>
     <body>
         <form method="POST">
-            
+
             <%
 
+                if (request.getParameter("btnsubmit") != null) {
+                    String HotelbookingContent = request.getParameter("txt_content");
+                    String HotelbookingDate = request.getParameter("txt_date");
+                    String HotelbookingTime = request.getParameter("txt_time");
 
-            if (request.getParameter("btnsubmit")!= null) {
-                String HotelbookingContent = request.getParameter("txt_content");
-                String HotelbookingDate = request.getParameter("txt_date");
-                String HotelbookingTime = request.getParameter("txt_time");
-               
+                    String insQry = "insert into tbl_hotelbooking(hotelbooking_content,hotelbooking_date,hotelbooking_time,hotelbooking_curent_date,hotel_id,user_id)values('" + HotelbookingContent + "','" + HotelbookingDate + "','" + HotelbookingTime + "',curdate(),'" + request.getParameter("did") + "','" + session.getAttribute("uid") + "') ";
 
-             
-                    String insQry = "insert into tbl_hotelbooking(hotelbooking_content,hotelbooking_date,hotelbooking_time,hotelbooking_curent_date,hotel_id,user_id)values('" + HotelbookingContent + "','" + HotelbookingDate + "','" + HotelbookingTime + "',curdate(),'"+ request.getParameter("did") +"','"+ session.getAttribute("uid") +"') ";
-                    
 //               out.print(insQry);
-                    if(con.executeCommand(insQry)) {
-                       
-                        %>
-                        <script>
-                         alert("inserted");   
-                            </script>
-                        <%
-                    
+                    if (con.executeCommand(insQry)) {
+
+                        String SelQry = "Select max(hotelbooking_id   ) as id from tbl_hotelbooking";
+                        ResultSet rs = con.selectCommand(SelQry);
+                        rs.next();
+                        String id = rs.getString("id");
+            %> 
+            <script>
+                alert("inserted");
+                window.location = "PaymentHotel.jsp?id=<%=id%>";
+            </script>
+            <%
+
+                    }
                 }
-            }
-        %>
-            
+            %>
+
             <table border="1">
                 <tr>
                     <td>Content</td>
@@ -56,15 +58,15 @@
                     <td>Time</td>
                     <td><input type="time" name="txt_time" required></td>
                 </tr>
-                
 
 
 
-             
+
+
                 <tr>
                     <td colspan="2" align="center">
                         <input type="submit" name="btnsubmit" value="send">
-                        
+
 
                     </td>
                 </tr>
