@@ -24,7 +24,7 @@
 
                 <tr>
                     <td>Name:</td>
-                    <td><input type="text" name="name" required></td>
+                    <td><input type="text" name="name" title="Name Allows Only Alphabets,Spaces and First Letter Must Be Capital Letter" pattern="^[A-Z]+[a-zA-Z ]*$" required></td>
                 </tr>
                 <tr>
                     <td>Contact:</td>
@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input type="password" name="password" required></td>
+                    <td><input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name="password" required></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">

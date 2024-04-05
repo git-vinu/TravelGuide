@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
     <body>
-        
+
         <nav class="navbar navbar-expand-lg navbar-light text-capitalize">
             <div class="container">
                 <a class="navbar-brand" href="#"><img src="../Assets/Template/main/imgs/logo.png" alt="#" /></a>
@@ -21,41 +21,50 @@
                 <div class="collapse navbar-collapse" id="show-menu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" onclick="window.location='HomePage.jsp'">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" onclick="window.location = 'HomePage.jsp'">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='MyProfile.jsp'">Profile</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'ChangePassword.jsp'" style="background-color: grey">ChangePassword</a>
+                                <a class="dropdown-item" onclick="window.location = 'EditProfile.jsp'" style="background-color: grey">EditProfile</a>
+                                <a class="dropdown-item"  onclick="window.location = 'MyProfile.jsp'" style="background-color: grey">MyProfile</a>
+                            </div>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchAdvisor.jsp'">Advisor</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'SearchAdvisor.jsp'" style="background-color: grey">SearchAdvisor</a>
+                                <a class="dropdown-item" onclick="window.location = 'SearchDriver.jsp'" style="background-color: grey">SearchDriver</a>
+                                <a class="dropdown-item"  onclick="window.location = 'SearchGuide.jsp'" style="background-color: grey">SearchGuide</a>
+                                <a class="dropdown-item"  onclick="window.location = 'SearchHotel.jsp'" style="background-color: grey">SearchHotel</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchDriver.jsp'">Driver</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Booking
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'ViewMyAdvisorBooking.jsp'" style="background-color: grey">ViewMyAdvisorBooking</a>
+                                <a class="dropdown-item" onclick="window.location = 'ViewMyDriverBooking.jsp'" style="background-color: grey">ViewMyDriverBooking</a>
+                                <a class="dropdown-item"  onclick="window.location = 'ViewMyGuideBooking.jsp'" style="background-color: grey">ViewMyGuideBooking</a>
+                                <a class="dropdown-item"  onclick="window.location = 'ViewMyHotelBooking.jsp'" style="background-color: grey">ViewMyHotelBooking</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchGuide.jsp'">Guide</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchHotel.jsp'">Hotel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyAdvisorBooking.jsp'">AdvisorBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyDriverBooking.jsp'">DriverBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyGuideBooking.jsp'">GuideBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyHotelBooking.jsp'">HotelBooking</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" onclick="window.location = '../Guest/Login.jsp'">Logout </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
         <header id="home">
             <div class="overlay">
                 <div class="container">
@@ -67,7 +76,7 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="about-us" id="about">
             <div class="small-container">
                 <h2 class="text-center">Winter <span>Holiday</span></h2>
@@ -108,7 +117,7 @@
                 <div class="second"></div>
             </div>
         </div>
-        
+
         <div class="services" id="service">
             <div class="container">
                 <h2 class="text-capitalize">Enjoy <span>Resort</span></h2>
@@ -116,29 +125,29 @@
             </div>
             <div class="small-container">
                 <div id="slideToNext" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="../Assets/Template/main/imgs/pic4.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../Assets/Template/main/imgs/pic4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Assets/Template/main/imgs/pic3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../Assets/Template/main/imgs/pic2.jpg" class="d-block w-100" alt="...">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                      <img src="../Assets/Template/main/imgs/pic3.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="../Assets/Template/main/imgs/pic2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#slideToNext" role="button" data-slide="prev">
-                    <i class="fas fa-chevron-left fa-2x"></i>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#slideToNext" role="button" data-slide="next">
-                    <i class="fas fa-chevron-right fa-2x"></i>
-                    <span class="sr-only">Next</span>
-                  </a>
+                    <a class="carousel-control-prev" href="#slideToNext" role="button" data-slide="prev">
+                        <i class="fas fa-chevron-left fa-2x"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#slideToNext" role="button" data-slide="next">
+                        <i class="fas fa-chevron-right fa-2x"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
-        
+
         <div class="agency" id="agency">
             <div class="white-overlay">
                 <div class="container">
@@ -154,7 +163,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="statistics text-capitalize text-center font-weight-bold">
             <div class="container">
                 <div class="row">
@@ -181,7 +190,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="contact" id="contact">
             <div class="violet-overlay">
                 <div class="container">
@@ -198,7 +207,7 @@
                 </div>
             </div>
         </div>
-        
+
         <footer>
             <div class="container">
                 <ul>
@@ -256,35 +265,35 @@
                 <p>Copyright 2019  Design by <a href="https://html.design">Free Html Templates</a></p>
             </div>
         </footer>
-        
+
         <script src="../Assets/Template/main/js/jquery-3.3.1.min.js"></script>
         <script src="../Assets/Template/main/js/bootstrap.min.js"></script>
         <script>
-            $(function () {
-                
-                'use strict';
-                
-                var winH = $(window).height();
-                
-                $('header').height(winH);  
-                
-                $('header .container > div').css('top', (winH / 2) - ( $('header .container > div').height() / 2));
-                
-                $('.navbar ul li a.search').on('click', function (e) {
-                    e.preventDefault();
-                });
-                $('.navbar a.search').on('click', function () {
-                    $('.navbar form').fadeToggle();
-                });
-                
-                $('.navbar ul.navbar-nav li a').on('click', function (e) {
-                    
-                    var getAttr = $(this).attr('href');
-                    
-                    e.preventDefault();
-                    $('html').animate({scrollTop: $(getAttr).offset().top}, 1000);
-                });
-            })
+                                $(function() {
+
+                                    'use strict';
+
+                                    var winH = $(window).height();
+
+                                    $('header').height(winH);
+
+                                    $('header .container > div').css('top', (winH / 2) - ($('header .container > div').height() / 2));
+
+                                    $('.navbar ul li a.search').on('click', function(e) {
+                                        e.preventDefault();
+                                    });
+                                    $('.navbar a.search').on('click', function() {
+                                        $('.navbar form').fadeToggle();
+                                    });
+
+                                    $('.navbar ul.navbar-nav li a').on('click', function(e) {
+
+                                        var getAttr = $(this).attr('href');
+
+                                        e.preventDefault();
+                                        $('html').animate({scrollTop: $(getAttr).offset().top}, 1000);
+                                    });
+                                })
         </script>
     </body>
 </html>

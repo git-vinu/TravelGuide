@@ -24,15 +24,17 @@
                         <li class="nav-item active">
                             <a class="nav-link" onclick="window.location='HomePage.jsp'">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='ChangePassword.jsp'">ChangePassword</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'ChangePassword.jsp'" style="background-color: grey">ChangePassword</a>
+                                <a class="dropdown-item" onclick="window.location = 'EditProfile.jsp'" style="background-color: grey">EditProfile</a>
+                                <a class="dropdown-item"  onclick="window.location = 'MyProfile.jsp'" style="background-color: grey">MyProfile</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='EditProfile.jsp'">EditProfile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  onclick="window.location='MyProfile.jsp'">MyProfile</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link"  onclick="window.location='ViewMyGBooking.jsp'">MyGBooking</a>
                         </li>
