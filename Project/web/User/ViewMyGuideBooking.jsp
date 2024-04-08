@@ -41,6 +41,7 @@
             <tr>
                 <td><%=i%></td>
                 <td><%= rs.getString("guide_name")%></td>
+                
                 <td><%= rs.getString("guidebooking_date")%></td>
                 <td><%= rs.getString("guidebooking_time")%></td>
                 <td><%= rs.getString("guidebooking_curent_date")%></td>
@@ -48,6 +49,28 @@
                 <td><%= rs.getString("guide_contact")%></td>
                 <td><%= rs.getString("guide_address")%></td>
                 <td><%= rs.getString("guidebooking_status")%></td>
+                
+                <td><%
+                if(rs.getString("guidebooking_status").equals("0"))
+                {
+                    %>
+                    Pending
+                    <%
+                }
+                else if(rs.getString("guidebooking_status").equals("1"))
+                {
+                     %>
+                     <a href="GuideChat/Chat.jsp?id=<%=rs.getString("guide_id")%>">Chat</a>
+                    <%
+                }
+                else if(rs.getString("guidebooking_status").equals("2"))
+                {
+                     %>
+                    Rejected
+                    <%
+                }
+                %></td>
+                
 
             </tr>
             <%

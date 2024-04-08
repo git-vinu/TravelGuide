@@ -22,52 +22,44 @@
                  <div class="collapse navbar-collapse" id="show-menu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" onclick="window.location='HomePage.jsp'">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" onclick="window.location = 'HomePage.jsp'">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='MyProfile.jsp'">MyProfile</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'ChangePassword.jsp'" style="background-color: grey">ChangePassword</a>
+                                <a class="dropdown-item" onclick="window.location = 'EditProfile.jsp'" style="background-color: grey">EditProfile</a>
+                                <a class="dropdown-item"  onclick="window.location = 'MyProfile.jsp'" style="background-color: grey">MyProfile</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='ChangePassword.jsp'">ChangePassword</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'SearchAdvisor.jsp'" style="background-color: grey">SearchAdvisor</a>
+                                <a class="dropdown-item" onclick="window.location = 'SearchDriver.jsp'" style="background-color: grey">SearchDriver</a>
+                                <a class="dropdown-item"  onclick="window.location = 'SearchGuide.jsp'" style="background-color: grey">SearchGuide</a>
+                                <a class="dropdown-item"  onclick="window.location = 'SearchHotel.jsp'" style="background-color: grey">SearchHotel</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  onclick="window.location='EditProfile.jsp'">EditProfile</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Booking
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: transparent;">
+                                <a class="dropdown-item" onclick="window.location = 'ViewMyAdvisorBooking.jsp'" style="background-color: grey">ViewMyAdvisorBooking</a>
+                                <a class="dropdown-item" onclick="window.location = 'ViewMyDriverBooking.jsp'" style="background-color: grey">ViewMyDriverBooking</a>
+                                <a class="dropdown-item"  onclick="window.location = 'ViewMyGuideBooking.jsp'" style="background-color: grey">ViewMyGuideBooking</a>
+                                <a class="dropdown-item"  onclick="window.location = 'ViewMyHotelBooking.jsp'" style="background-color: grey">ViewMyHotelBooking</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  onclick="window.location='AdvisorBooking.jsp'">AdvisorBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"  onclick="window.location='DriverBooking.jsp'">DriverBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='GuideBooking.jsp'">GuideBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='HotelBooking.jsp'">HotelBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchAdvisor.jsp'">SearchAdvisor</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchDriver.jsp'">SearchDriver</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchGuide.jsp'">SearchGuide</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='SearchHotel.jsp'">SearchHotel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyAdvisorBooking.jsp'">ViewMyAdvisorBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyDriverBooking.jsp'">ViewMyDriverBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyGuideBooking.jsp'">ViewMyGuideBooking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"   onclick="window.location='ViewMyHotelBooking.jsp'">ViewMyHotelBooking</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" onclick="window.location = '../Guest/Login.jsp'">Logout </a>
                         </li>
                     </ul>
                 </div>

@@ -48,6 +48,7 @@
                 <td><%= rs.getString("hotel_contact")%></td>
                 <td><%= rs.getString("hotel_address")%></td>
                 <td><%= rs.getString("hotelbooking_status")%></td>
+                
 
             </tr>
             <%

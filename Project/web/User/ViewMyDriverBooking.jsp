@@ -41,6 +41,7 @@
             <tr>
                 <td><%=i%></td>
                 <td><%= rs.getString("driver_name")%></td>
+                
                 <td><%= rs.getString("driverbooking_date")%></td>
                 <td><%= rs.getString("driverbooking_time")%></td>
                 <td><%= rs.getString("drivebooking_curent_date")%></td>
@@ -48,6 +49,28 @@
                 <td><%= rs.getString("driver_contact")%></td>
                 <td><%= rs.getString("driver_address")%></td>
                 <td><%= rs.getString("driverbooking_status")%></td>
+                
+                <td><%
+                if(rs.getString("driverbooking_status").equals("0"))
+                {
+                    %>
+                    Pending
+                    <%
+                }
+                else if(rs.getString("driverbooking_status").equals("1"))
+                {
+                     %>
+                     <a href="DriverChat/Chat.jsp?id=<%=rs.getString("driver_id")%>">Chat</a>
+                    <%
+                }
+                else if(rs.getString("driverbooking_status").equals("2"))
+                {
+                     %>
+                    Rejected
+                    <%
+                }
+                %></td>
+                
 
             </tr>
             <%

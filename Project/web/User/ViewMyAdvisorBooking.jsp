@@ -19,13 +19,15 @@
         <table border="1">
             <tr>
                 <th>Sl.No</th>
-                <th>Hotel Name</th>
+                <th>Advicor Name</th>
+                <th>Advicor Advicor</th>           
                 <th>Booking Date</th>
+
                 <th>Booking Time</th>
                 <th>Booked Date</th>
-                <th>Hotel Details</th>
-                <th>Hotel Contact</th>
-                <th>Hotel Address</th>
+                <th>Advicor Details</th>
+                <th>Advicor Contact</th>
+                <th>Advicor Address</th>
                 <th>Status</th>
             </tr>
             <%
@@ -41,13 +43,34 @@
             <tr>
                 <td><%=i%></td>
                 <td><%= rs.getString("advicor_name")%></td>
+                <td><a href="tel:<%= rs.getString("advicor_contact")%>"><%= rs.getString("advicor_contact")%></a></td>     
                 <td><%= rs.getString("advicorbooking_date")%></td>
+
                 <td><%= rs.getString("advicorbooking_time")%></td>
                 <td><%= rs.getString("advicorbooking_curent_date")%></td>
                 <td><%= rs.getString("advicorbooking_content")%></td>
                 <td><%= rs.getString("advicor_contact")%></td>
                 <td><%= rs.getString("advicor__address")%></td>
-                <td><%= rs.getString("advicorbooking_status")%></td>
+                <td><%
+                if(rs.getString("advicorbooking_status").equals("0"))
+                {
+                    %>
+                    Pending
+                    <%
+                }
+                else if(rs.getString("advicorbooking_status").equals("1"))
+                {
+                     %>
+                     <a href="AdvisorChat/Chat.jsp?id=<%=rs.getString("advicor_id")%>">Chat</a>
+                    <%
+                }
+                else if(rs.getString("advicorbooking_status").equals("2"))
+                {
+                     %>
+                    Rejected
+                    <%
+                }
+                %></td>
 
             </tr>
             <%
