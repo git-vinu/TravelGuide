@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>District</title>
-        <%@include file="SessionValidator.jsp" %>
+        
         <%@include file="Header.jsp" %>
     </head>
 
