@@ -1,4 +1,4 @@
-<%@include file="head.jsp" %>
+<%@include file="Header.jsp" %>
 <%-- 
     Document   : NewUser
     Created on : 6 Feb, 2024, 5:44:24 PM
@@ -82,7 +82,7 @@
 
     </body>
     
-    <%@include file="foot.jsp" %>
+    <%@include file="Footer.jsp" %>
 
     <script src="../Assets/jQuery/jQuery.js"></script>
     <script>

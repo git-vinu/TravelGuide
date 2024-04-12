@@ -1,12 +1,12 @@
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean class="DB.ConnectionClass" id="con"></jsp:useBean>
 <%
-    String selQry = "select * from tbl_advicor_user_chat tsc inner join tbl_user t on (tsc.to_user_id=t.user_id) or (tsc.from_user_id=t.user_id) where t.user_id='" + session.getAttribute("uid") + "' order by chat_id";
+    String selQry = "select * from tbl_driver_user_chat tsc inner join tbl_user t on (tsc.to_user_id=t.user_id) or (tsc.from_user_id=t.user_id) where t.user_id='" + session.getAttribute("uid") + "' order by chat_id";
     //System.out.println(selQry);
     ResultSet rs = con.selectCommand(selQry);
     while (rs.next()) {
 
-        if (rs.getString("to_advicor_id").equals(request.getParameter("id"))) {
+        if (rs.getString("to_driver_id").equals(request.getParameter("id"))) {
 
 
 %>

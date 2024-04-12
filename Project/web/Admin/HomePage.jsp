@@ -41,9 +41,12 @@
                                                                         out.println(cc.getString("c"));
                                                                     }
                                                                 %>
+                                                               
                                                             </span> </h3>
                                                         <p>Users</p>
-                                                    </div>
+                                                         
+                                                    </div>                                                                    
+                                                               
                                                 </div>
                                             </div>
                                         </div>
@@ -53,7 +56,7 @@
                         </div>
 
                         <div class="col-xl-12">
-                            <div class="white_box card_height_100">
+                            <div class="white_box card_height_10">
                                 <div class="box_header border_bottom_1px  ">
                                     <div class="main-title">
                                         <h3 class="mb_25">Users</h3>
@@ -87,6 +90,146 @@
                                     %>
                                 </div>
                             </div>
+                                <div class="white_box card_height_10">
+                                <div class="box_header border_bottom_1px  ">
+                                    <div class="main-title">
+                                        <h3 class="mb_25">Advicor</h3>
+                                    </div>
+                                </div>
+                                <div class="staf_list_wrapper sraf_active owl-carousel">
+
+
+                                    <%
+                                        String cQrya = "select * from tbl_advicor c inner join tbl_place p on p.place_id=c.place_id ORDER BY RAND()";
+                                        ResultSet crsa = con.selectCommand(cQrya);
+                                        while (crsa.next()) {
+
+                                    %>
+
+
+                                    <!-- single carousel  -->
+                                    <div class="single_staf">
+                                        <div class="staf_thumb">
+                                            <img src="../Assets/Files/<%=crsa.getString("advicor_photo")%>" alt="">
+                                        </div>
+                                        <h4><%=crsa.getString("advicor_name")%></h4>
+                                        <p><%=crsa.getString("place_name")%></p>
+                                    </div>
+
+
+
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                                
+                                <div class="white_box card_height_10">
+                                <div class="box_header border_bottom_1px  ">
+                                    <div class="main-title">
+                                        <h3 class="mb_25">Driver</h3>
+                                    </div>
+                                </div>
+                                <div class="staf_list_wrapper sraf_active owl-carousel">
+
+
+                                    <%
+                                        String cQryb = "select * from tbl_driver c inner join tbl_place p on p.place_id=c.place_id ORDER BY RAND()";
+                                        ResultSet crsb = con.selectCommand(cQryb);
+                                        while (crsb.next()) {
+
+                                    %>
+
+
+                                    <!-- single carousel  -->
+                                    <div class="single_staf">
+                                        <div class="staf_thumb">
+                                            <img src="../Assets/Files/<%=crsb.getString("driver_photo")%>" alt="">
+                                        </div>
+                                        <h4><%=crsb.getString("driver_name")%></h4>
+                                        <p><%=crsb.getString("place_name")%></p>
+                                    </div>
+
+
+
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                                
+                                <div class="white_box card_height_10">
+                                <div class="box_header border_bottom_1px  ">
+                                    <div class="main-title">
+                                        <h3 class="mb_25">Guide</h3>
+                                    </div>
+                                </div>
+                                <div class="staf_list_wrapper sraf_active owl-carousel">
+
+
+                                    <%
+                                        String cQryc = "select * from tbl_guide c inner join tbl_place p on p.place_id=c.place_id ORDER BY RAND()";
+                                        ResultSet crsc = con.selectCommand(cQryc);
+                                        while (crsc.next()) {
+
+                                    %>
+
+
+                                    <!-- single carousel  -->
+                                    <div class="single_staf">
+                                        <div class="staf_thumb">
+                                            <img src="../Assets/Files/<%=crsc.getString("guide_photo")%>" alt="">
+                                        </div>
+                                        <h4><%=crsc.getString("guide_name")%></h4>
+                                        <p><%=crsc.getString("place_name")%></p>
+                                    </div>
+
+
+
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                                
+                                <div class="white_box card_height_10">
+                                <div class="box_header border_bottom_1px  ">
+                                    <div class="main-title">
+                                        <h3 class="mb_25">Hotel</h3>
+                                    </div>
+                                </div>
+                                <div class="staf_list_wrapper sraf_active owl-carousel">
+
+
+                                    <%
+                                        String cQryd = "select * from tbl_hotel c inner join tbl_place p on p.place_id=c.place_id ORDER BY RAND()";
+                                        ResultSet crsd = con.selectCommand(cQryd);
+                                        while (crsd.next()) {
+
+                                    %>
+
+
+                                    <!-- single carousel  -->
+                                    <div class="single_staf">
+                                        <div class="staf_thumb">
+                                            <img src="../Assets/Files/<%=crsd.getString("hotel_photo")%>" alt="">
+                                        </div>
+                                        <h4><%=crsd.getString("hotel_name")%></h4>
+                                        <p><%=crsd.getString("place_name")%></p>
+                                    </div>
+
+
+
+                                    <%
+
+                                        }
+                                    %>
+                                </div>
+                            </div>
+                                
                         </div>
                     </div>
                 </div>

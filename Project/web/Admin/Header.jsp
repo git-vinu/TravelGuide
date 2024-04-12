@@ -36,6 +36,7 @@
         <link rel="stylesheet" href="../Assets/Template/admin/css/metisMenu.css">
         <!-- style CSS -->
         <link rel="stylesheet" href="../Assets/Template/admin/css/style.css" />
+        <link rel="stylesheet" href="../Assets/Template/form.css" />
         <link rel="stylesheet" href="../Assets/Template/admin/css/colors/default.css" id="colorSkinCSS">
     
         
@@ -57,6 +58,18 @@
                     </a>
                    
                 </li>
+                
+                <li class="side_menu_title">
+                    <span>AdvisorRegistration</span>
+                </li>
+                <li class="mm-active">
+                    <a  href="NewAdvisor.jsp"  aria-expanded="false">
+                        <img src="../Assets/Template/admin/img/menu-icon/2.svg" alt="">
+                        <span>NewAdvisor</span>
+                    </a>
+                   
+                </li>
+                
                 <li class="side_menu_title">
                     <span>Basic Data's</span>
                 </li>
@@ -79,3 +92,5 @@
             </ul>
 
         </nav>
+                <div id="tab" align="center">
+                    

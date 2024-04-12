@@ -1,4 +1,4 @@
-        <!-- jquery slim -->
+</div>        <!-- jquery slim -->
         <script src="../Assets/Template/admin/js/jquery-3.4.1.min.js"></script>
         <!-- popper js -->
         <script src="../Assets/Template/admin/js/popper.min.js"></script>
