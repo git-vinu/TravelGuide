@@ -77,6 +77,7 @@
                     <%
                     } else if (rs.getInt("driverbooking_status") == 1) {
                     %>
+                    <a href="UserChat/Chat.jsp?id=<%=rs.getString("user_id")%>">Chat</a> |
                     <a href="ViewMyDBooking.jsp?eid=<%=rs.getString("driverbooking_id")%>">Reject</a>
                     <%
                     } else if (rs.getInt("driverbooking_status") == 2) {

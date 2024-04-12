@@ -77,6 +77,7 @@
                     <%
                     } else if (rs.getInt("advicorbooking_status") == 1) {
                     %>
+                    <a href="UserChat/Chat.jsp?id=<%=rs.getString("user_id")%>">Chat</a> |
                     <a href="ViewMyABooking.jsp?eid=<%=rs.getString("advicorbooking_id")%>">Reject</a>
                     <%
                     } else if (rs.getInt("advicorbooking_status") == 2) {

@@ -76,6 +76,7 @@
                     <%
                     } else if (rs.getInt("guidebooking_status") == 1) {
                     %>
+                    <a href="UserChat/Chat.jsp?id=<%=rs.getString("user_id")%>">Chat</a> |
                     <a href="ViewMyGBooking.jsp?eid=<%=rs.getString("guidebooking_id")%>">Reject</a>
                     <%
                     } else if (rs.getInt("guidebooking_status") == 2) {
