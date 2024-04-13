@@ -14,7 +14,7 @@
         
         <nav class="navbar navbar-expand-lg navbar-light text-capitalize">
             <div class="container">
-                <a class="navbar-brand" href="#"><img src="../../Assets/Template/main/imgs/logo.png" alt="#" /></a>
+                <a class="navbar-brand" href="#"><img src="../../Assets/Template/main/imgs/logo.png" alt="#" width="130"/></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#show-menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -37,6 +37,9 @@
                         
                         <li class="nav-item">
                             <a class="nav-link"  onclick="window.location='ViewMyGBooking.jsp'">MyGBooking</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link"  onclick="window.location='../Guest/Login.jsp'">Logout</a>
                         </li>
                     </ul>
                 </div>

@@ -25,9 +25,6 @@
                             <a class="nav-link" onclick="window.location='../index.html'">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="window.location='NewAdvisor.jsp'">Advisor</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" onclick="window.location='NewDriver.jsp'">Driver</a>
                         </li>
                         <li class="nav-item">

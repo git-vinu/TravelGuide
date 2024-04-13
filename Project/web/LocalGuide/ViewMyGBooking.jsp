@@ -33,7 +33,7 @@
     %>
     
     <body>
-        <h1>My Bookings</h1>
+        <h1>My Guide Bookings</h1>
         <table border="1">
             <tr>
                 <th>Sl.No</th>

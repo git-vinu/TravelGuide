@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/TravelGuide/Project/web/Guest/head.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/Admin/Header.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/User/head.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/index.html</file>
+            <file>file:/D:/TravelGuide/Project/web/LocalGuide/HomePage.jsp</file>
+            <file>file:/D:/TravelGuide/Project/web/LocalGuide/foot.jsp</file>
             <file>file:/D:/TravelGuide/Project/web/LocalGuide/head.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/Hotel/head.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/Driver/head.jsp</file>
-            <file>file:/D:/TravelGuide/Project/web/Advisor/head.jsp</file>
+            <file>file:/D:/TravelGuide/Project/web/Admin/HomePage.jsp</file>
+            <file>file:/D:/TravelGuide/Project/web/LocalGuide/ViewMyGBooking.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -26,6 +26,7 @@
                             <div class="single_element">
                                 <div class="quick_activity">
                                     <div class="row">
+
                                         <div class="col-12">
                                             <div class="quick_activity_wrap">
                                                 <div class="single_quick_activity d-flex">
@@ -41,12 +42,93 @@
                                                                         out.println(cc.getString("c"));
                                                                     }
                                                                 %>
-                                                               
+
                                                             </span> </h3>
                                                         <p>Users</p>
-                                                         
+
                                                     </div>                                                                    
-                                                               
+
+                                                </div>
+
+                                                <div class="single_quick_activity d-flex">
+                                                    <div class="icon">
+                                                        <img src="../Assets/admin/img/icon/College.png" alt="">
+                                                    </div>
+                                                    <div class="count_content">
+                                                        <h3><span class="counter">
+                                                                <%
+                                                                    String csel2 = "select count(*) as c from tbl_advicor ";
+                                                                    ResultSet cc2 = con.selectCommand(csel2);
+                                                                    if (cc2.next()) {
+                                                                        out.println(cc2.getString("c"));
+                                                                    }
+                                                                %>
+
+                                                            </span> </h3>
+                                                        <p>Advicor</p>
+
+                                                    </div>                                                                    
+
+                                                </div>
+                                                <div class="single_quick_activity d-flex">
+                                                    <div class="icon">
+                                                        <img src="../Assets/admin/img/icon/College.png" alt="">
+                                                    </div>
+                                                    <div class="count_content">
+                                                        <h3><span class="counter">
+                                                                <%
+                                                                    String csel3 = "select count(*) as c from tbl_driver ";
+                                                                    ResultSet cc3 = con.selectCommand(csel3);
+                                                                    if (cc3.next()) {
+                                                                        out.println(cc3.getString("c"));
+                                                                    }
+                                                                %>
+
+                                                            </span> </h3>
+                                                        <p>Driver</p>
+
+                                                    </div>                                                                    
+
+                                                </div>
+                                                <div class="single_quick_activity d-flex">
+                                                    <div class="icon">
+                                                        <img src="../Assets/admin/img/icon/College.png" alt="">
+                                                    </div>
+                                                    <div class="count_content">
+                                                        <h3><span class="counter">
+                                                                <%
+                                                                    String csel4 = "select count(*) as c from tbl_guide ";
+                                                                    ResultSet cc4 = con.selectCommand(csel4);
+                                                                    if (cc4.next()) {
+                                                                        out.println(cc4.getString("c"));
+                                                                    }
+                                                                %>
+
+                                                            </span> </h3>
+                                                        <p>Guide</p>
+
+                                                    </div>                                                                    
+
+                                                </div>
+                                                <div class="single_quick_activity d-flex">
+                                                    <div class="icon">
+                                                        <img src="../Assets/admin/img/icon/College.png" alt="">
+                                                    </div>
+                                                    <div class="count_content">
+                                                        <h3><span class="counter">
+                                                                <%
+                                                                    String csel5 = "select count(*) as c from tbl_hotel ";
+                                                                    ResultSet cc5 = con.selectCommand(csel5);
+                                                                    if (cc5.next()) {
+                                                                        out.println(cc5.getString("c"));
+                                                                    }
+                                                                %>
+
+                                                            </span> </h3>
+                                                        <p>Hotel</p>
+
+                                                    </div>                                                                    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +172,7 @@
                                     %>
                                 </div>
                             </div>
-                                <div class="white_box card_height_10">
+                            <div class="white_box card_height_10">
                                 <div class="box_header border_bottom_1px  ">
                                     <div class="main-title">
                                         <h3 class="mb_25">Advicor</h3>
@@ -124,8 +206,8 @@
                                     %>
                                 </div>
                             </div>
-                                
-                                <div class="white_box card_height_10">
+
+                            <div class="white_box card_height_10">
                                 <div class="box_header border_bottom_1px  ">
                                     <div class="main-title">
                                         <h3 class="mb_25">Driver</h3>
@@ -159,8 +241,8 @@
                                     %>
                                 </div>
                             </div>
-                                
-                                <div class="white_box card_height_10">
+
+                            <div class="white_box card_height_10">
                                 <div class="box_header border_bottom_1px  ">
                                     <div class="main-title">
                                         <h3 class="mb_25">Guide</h3>
@@ -194,8 +276,8 @@
                                     %>
                                 </div>
                             </div>
-                                
-                                <div class="white_box card_height_10">
+
+                            <div class="white_box card_height_10">
                                 <div class="box_header border_bottom_1px  ">
                                     <div class="main-title">
                                         <h3 class="mb_25">Hotel</h3>
@@ -229,7 +311,7 @@
                                     %>
                                 </div>
                             </div>
-                                
+
                         </div>
                     </div>
                 </div>

@@ -40,6 +40,9 @@
                         <li class="nav-item">
                             <a class="nav-link"  onclick="window.location='ViewMyGBooking.jsp'">MyGBooking</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  onclick="window.location='../Guest/Login.jsp'">Logout</a>
+                        </li>
                     </ul>
                 </div>
             </div>
